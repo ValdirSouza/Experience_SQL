@@ -1,2 +1,2 @@
 # Estudos SQL
-Repositorio para estudos de SQL no MySQL e para consultas posteriores.
+Repositorio destinado ao estudo da linguagem SQL utilizando o MySQL Workbench.
