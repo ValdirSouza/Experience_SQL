@@ -1,27 +1,27 @@
--- Display Local Databases
+-- Display Local Databases - Schemas
 SHOW DATABASES;
 
--- Create Databases
+-- Create Databases - Schemas
 CREATE DATABASE firstexample;
 
--- Drop Database
-DROP DATABASE firsteample;
+-- Drop Database - Schemas
+DROP DATABASE firstexample;
 
--- Use a Particular Database
+-- Use a Particular Database - Schemas
 USE firstexample;
 
 -- Display Tables From Selected Database
 SHOW TABLES;
 
 -- Create tables
-CREATE TABLE firstexample.periodicos(
+CREATE TABLE periodicos(
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome_periodico VARCHAR(25),
     issn INT,
     id_editora INT
 );
 
-CREATE TABLE firstexample.editora(
+CREATE TABLE editora(
     id INT AUTO_INCREMENT,
     nome_editora VARCHAR(120) UNIQUE,
     pais VARCHAR(10),
@@ -29,13 +29,13 @@ CREATE TABLE firstexample.editora(
 );
 
 -- Add Foreign Key - Relationship
-ALTER TABLE firstexample.periodicos ADD CONSTRAINT fk_editora_periodicos
+ALTER TABLE periodicos ADD CONSTRAINT fk_editora_periodicos
 FOREIGN KEY (id_editora) REFERENCES editora(id);
 
 -- Insert Datas
-INSERT INTO firstexample.editora(nome_editora, pais)
+INSERT INTO editora(nome_editora, pais)
 VALUES ("IEEE", "EUA"), ("DataScienceMagazine", "EUA"), ("IEEE_EU", "EU");
 
-INSERT INTO firstexample.periodicos (nome_periodico, issn, id_editora)
+INSERT INTO periodicos (nome_periodico, issn, id_editora)
 VALUES ("Special Issue", 156795164, (SELECT id FROM firstexample.editora WHERE nome_editora = "IEEE")),
 ("Special Issue 2", 186795164, (SELECT id FROM firstexample.editora WHERE nome_editora = "IEEE_EU"));
