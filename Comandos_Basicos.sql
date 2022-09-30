@@ -7,8 +7,11 @@ CREATE DATABASE firstexample;
 -- Drop Database - Schemas
 DROP DATABASE firstexample;
 
+-- Create new Databases - Schemas
+CREATE DATABASE Publicacoes;
+
 -- Use a Particular Database - Schemas
-USE firstexample;
+USE Publicacoes;
 
 -- Display Tables From Selected Database
 SHOW TABLES;
