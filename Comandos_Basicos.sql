@@ -16,7 +16,7 @@ USE Publicacoes;
 -- Display Tables From Selected Database
 SHOW TABLES;
 
--- Create tables
+-- Create table to be child
 CREATE TABLE periodicos(
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome_periodico VARCHAR(25),
@@ -24,6 +24,7 @@ CREATE TABLE periodicos(
     id_editora INT
 );
 
+-- Create table to the parent
 CREATE TABLE editora(
     id INT AUTO_INCREMENT,
     nome_editora VARCHAR(120) UNIQUE,
